@@ -18,7 +18,11 @@
   "dependencies": {
     "find-parent-dir": "~0.1.0",
     "require-module": "~0.1.0",
-    "mutiny": "~0.1.3"
+    "mutiny": "~0.1.3",
+    "resolve-git-remote": "~0.1.1",
+    "mkdirp": "~0.3.5",
+    "rimraf": "~2.2.4",
+    "npmlog": "0.0.6"
   },
   "devDependencies": {
     "nave": "~0.4.3",

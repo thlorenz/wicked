@@ -1,6 +1,5 @@
 'use strict';
 
-var go = module.exports = 
 
 /**
  * Generates jsdoc wiki pages for project of current working directory and updates github wiki with them.
@@ -9,6 +8,6 @@ var go = module.exports =
  * @function
  * @param {String} root of the project
  */
-function wicked(root) {
+var go = module.exports = function wicked(root) {
   
 };
