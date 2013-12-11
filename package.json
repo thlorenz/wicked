@@ -23,8 +23,8 @@
     "mkdirp": "~0.3.5",
     "rimraf": "~2.2.4",
     "npmlog": "0.0.6",
-    "resolve-bin": "~0.1.0",
-    "jsdoc": "git://github.com/thlorenz/jsdoc#patch-1"
+    "jsdoc-githubify": "~0.1.1",
+    "jsdoc": "~3.3.0-alpha2"
   },
   "devDependencies": {
     "nave": "~0.4.3",
