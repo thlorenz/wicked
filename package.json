@@ -27,7 +27,8 @@
     "mutiny": "~0.2.0",
     "readdirp": "~0.3.1",
     "through2": "~0.2.3",
-    "runnel": "~0.5.1"
+    "runnel": "~0.5.1",
+    "update-section": "~0.1.1"
   },
   "devDependencies": {
     "nave": "~0.4.3",
