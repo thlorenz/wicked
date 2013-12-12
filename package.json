@@ -3,6 +3,9 @@
   "version": "0.0.0",
   "description": "Generates github wiki compatible API documentation from your project's jsdocs and adds them to your wiki.",
   "main": "index.js",
+  "bin": {
+    "wicked": "./bin/wicked.js"
+  },
   "scripts": {
     "test-main": "tap test/*.js",
     "test-0.8": "nave use 0.8 npm run test-main",

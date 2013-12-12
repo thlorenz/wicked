@@ -13,6 +13,17 @@ var log        =  require('npmlog')
  *  @desc Public wicked API
  */
 
+function clean(tmpdir, cb) {
+  log.info('wicked', 'Cleaning up ...');
+  log.verbose('wicked', 'Removing tmp dir', tmpdir);
+  rmrf(tmpdir, cb);
+}
+
+function tellmeWhere(repodir, cb) {
+  log.info('wicked', 'Wiki cloned to and upated at', repodir);
+  cb();
+}
+
 /**
  * Generates jsdoc wiki pages for project of current working directory and updates github wiki with them.
  *
@@ -33,7 +44,10 @@ var log        =  require('npmlog')
  * @param {Function(Error)} cb called back when wicked finished generating the wiki page
  */
 var go = module.exports = function wicked(args, jsdocargs, cb) {
+  args = args || {};
   jsdocargs = jsdocargs || [];
+
+  log.level = args.loglevel || 'info';
 
   // Not ideal to use cwd here, but resolve-github-(remote|branch) run git in current dir
   // So before we can actually override the root properly those tools need a PR
@@ -44,10 +58,10 @@ var go = module.exports = function wicked(args, jsdocargs, cb) {
         runJsdoc.bind(null, projectRoot, info.root, jsdocargs)
       , wikify.bind(null, info.repo.dir)
       , sidebar.bind(null, info.repo.dir)
-      , commitWiki.bind(null, info)
     ];
 
-    if (!args.noclean) tasks.push(rmrf.bind(null, info.root));
+    if (!args.noclean && !args.nocommit) tasks.push(clean.bind(null, info.root));
+    tasks.push(args.nocommit ? tellmeWhere.bind(null, info.repo.dir) : commitWiki.bind(null, info));
     tasks.push(cb);
                                  
     runnel(tasks);
@@ -62,12 +76,3 @@ var go = module.exports = function wicked(args, jsdocargs, cb) {
 /** @namespace Internal
  *  @desc Internal wicked functions
  */
-
-// Test
-if (!module.parent && typeof window === 'undefined') {
-  log.level = 'silly';
-  go({ noclean: false }, [], function (err) {
-    if (err) return console.error(err);
-    console.log('done');  
-  });
-}
