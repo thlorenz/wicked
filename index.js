@@ -33,13 +33,16 @@ function tellmeWhere(repodir, cb) {
  * Additionally the currently checked out branch will be used when generating blob urls to link source examples.
  *
  * However the github remote and branch can also be set via environment vars as explained in the
- * [documentation of jsdoc-githubify]{@link https://github.com/thlorenz/jsdoc-githubify#note) which is used
+ * [documentation of jsdoc-githubify]{@link https://github.com/thlorenz/jsdoc-githubify#note} which is used
  * by wicked under the hood.
  *
  * @name wicked
  * @memberof Public
  * @function
  * @param {Array.<String>} args consumed by wicked
+ * @param {Boolean=} args.noclean (false) if true, the temp directory into which wiki is checked out will **not be removed** when done
+ * @param {Boolean=} args.nocommit(false)  if true, the updated wiki will **not be committed automatically**
+ * @param {String=} args.loglevel (info) level at which to log: silly|verbose|info|warn|error|silent
  * @param {Array.<String>} jsdocargs consumed by jsdoc
  * @param {Function(Error)} cb called back when wicked finished generating the wiki page
  */

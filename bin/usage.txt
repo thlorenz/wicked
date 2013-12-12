@@ -1,0 +1,32 @@
+usage: wicked <wicked-options> -- <jsdoc-options>
+
+  Generates wiki API docs for the gihub project in the current directory.
+
+  Both options are optional, jsdoc-options get passed to [jsdoc](http://usejsdoc.org/about-commandline.html).
+
+  Note: overriding the jsdoc destination (-d, --destination) is not possible since wicked will write files to a temp dir
+
+OPTIONS:
+
+  --noclean       don't remove the temp directory into which wiki is checked out when finished
+
+  --nocommit      don't commit the updated wiki automatically nor remove the temp directory
+
+  -l, --loglevel  level at which to log: silly|verbose|info|warn|error|silent -- default: info
+  
+  -h, --help      Print this help message.
+
+
+EXAMPLES:
+  
+  Generate with default options:
+    
+    wicked
+
+  Override [jsdocconf.json](http://usejsdoc.org/about-configuring-jsdoc.html):
+
+    wicked -- --configure ./myconf.json
+
+  Override loglevel and jsoc configuration and don't remove temp directory:
+
+    wicked  --loglevel silly --noclean -- --configure ./myconf.json
