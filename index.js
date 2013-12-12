@@ -1,10 +1,13 @@
 'use strict';
 
-var log       =  require('npmlog')
-  , cloneWiki =  require('./lib/clone-wiki')
-  , runJsdoc  =  require('./lib/run-jsdoc')
-  , wikify    =  require('./lib/wikify')
-  , sidebar   =  require('./lib/sidebar')
+var log        =  require('npmlog')
+  , rmrf       =  require('rimraf')
+  , runnel     =  require('runnel')
+  , cloneWiki  =  require('./lib/clone-wiki')
+  , runJsdoc   =  require('./lib/run-jsdoc')
+  , wikify     =  require('./lib/wikify')
+  , sidebar    =  require('./lib/sidebar')
+  , commitWiki =  require('./lib/commit-wiki')
 
 /** @namespace Public
  *  @desc Public wicked API
@@ -35,24 +38,24 @@ var go = module.exports = function wicked(args, jsdocargs, cb) {
   // Not ideal to use cwd here, but resolve-github-(remote|branch) run git in current dir
   // So before we can actually override the root properly those tools need a PR
   var projectRoot = process.cwd();
+  
+  function updateWiki(info, cb) {
+    var tasks = [
+        runJsdoc.bind(null, projectRoot, info.root, jsdocargs)
+      , wikify.bind(null, info.repo.dir)
+      , sidebar.bind(null, info.repo.dir)
+      , commitWiki.bind(null, info)
+    ];
 
-  // TODO: runnel will fix this staircase
+    if (!args.noclean) tasks.push(rmrf.bind(null, info.root));
+    tasks.push(cb);
+                                 
+    runnel(tasks);
+  }
+
   cloneWiki(function (err, info) {
     if (err) return cb(err);
-    runJsdoc(projectRoot, info.root, jsdocargs, function (err, jsdocdir) {
-      if (err) return cb(err);
-
-      wikify(info.repo.dir, jsdocdir, function (err, apifiles) {
-        if (err) return cb(err);
-
-        sidebar(info.repo.dir, apifiles, function (err) {
-          if (err) return cb(err);
-          
-          // TODO: git add, commit, push
-          cb();
-        });
-      });
-    });
+    updateWiki(info, cb);
   })
 };
 
@@ -63,7 +66,7 @@ var go = module.exports = function wicked(args, jsdocargs, cb) {
 // Test
 if (!module.parent && typeof window === 'undefined') {
   log.level = 'silly';
-  go([], [], function (err) {
+  go({ noclean: false }, [], function (err) {
     if (err) return console.error(err);
     console.log('done');  
   });
