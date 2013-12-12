@@ -1,6 +1,6 @@
 {
   "name": "wicked",
-  "version": "0.0.6",
+  "version": "0.1.0",
   "description": "Generates github wiki compatible API documentation from your project's jsdocs and adds them to your wiki.",
   "main": "index.js",
   "bin": {
