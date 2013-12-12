@@ -19,7 +19,8 @@ argv.loglevel = argv.loglevel || argv.l || 'info';
 
 if (argv.h || argv.help) {
   var usage = path.join(__dirname, 'usage.txt');
-  return fs.createReadStream(usage).pipe(process.stdout);
+  fs.createReadStream(usage).pipe(process.stdout);
+  process.exit(0);
 }
 
 wicked(argv, argv._, function (err) {

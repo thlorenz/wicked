@@ -12,7 +12,6 @@ And that is wicked!
 
 ## Usage
 
-
 ### Most common Steps 
 
 First create a wiki for your project on github and create one page.
@@ -23,7 +22,7 @@ Then from the root of your project run:
   
 ### Command Line Options
 
-```sh
+```txt
 usage: wicked <wicked-options> -- <jsdoc-options>
 
   Generates wiki API docs for the gihub project in the current directory.
