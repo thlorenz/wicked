@@ -12,17 +12,25 @@ A tool that generates github wiki compatible API documentation from your project
 
 ## Usage
 
-### Most common Steps 
+### Steps 
 
-First create a wiki for your project on github and create one page.
+1. Create wiki by checking `wiki` in your project **Features** settings
+2. Initialize wiki by accessing the wiki (the book icon in the navbar) which links to `http://github.com/yourname/yourproject/wiki`
+3. Install wicked `npm install -g wicked`
+4. Go to the root of your github project on your machine
+5. Run `wicked`
 
-Then from the root of your project run:
+Steps **4 - 5** can be repeated everytime you want to re-generate API docs for your project.
+ 
+**wicked does not overwrite other pages you created in your wiki** so keep running wicked all you need. 
 
-    wicked
+More specifically **wicked only removes old `*.API.md` files** from your wiki and updates the links `_Sidebar.md` **without affecting any other links in the sidebar**.
+
+See an example of API docs added by `wicked` in its own [wiki](https://github.com/thlorenz/wicked/wiki).
   
 ### Command Line Options
 
-```txt
+```
 usage: wicked <wicked-options> -- <jsdoc-options>
 
   Generates wiki API docs for the gihub project in the current directory.
