@@ -6,19 +6,27 @@ A tool that generates github wiki compatible API documentation from your project
 
 And that is wicked!
 
-```js
-// TODO
-```
-
-## Status
-
-Nix, Nada, Nichevo, Nothing --> go away!
 ## Installation
 
-    npm install wicked
+    npm install -g wicked
+
+## CLI Usage
+
+First create a wiki for your project on github and create one page.
+
+Then from the root of your project run:
+
+    wicked
+  
+Documentation regarding command line flags coming.
 
 ## API
 
+TODO
+
+```js
+// TODO
+```
 
 ## License
 
