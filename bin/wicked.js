@@ -3,7 +3,7 @@
 var log = require('npmlog')
   , wicked = require('../')
 
-var wickedArgs = { noclean: false, nocommit: false, loglevel: 'info' } 
+var wickedArgs = { noclean: true, nocommit: false, loglevel: 'info' } 
   , jsdocArgs = [];
 
 wicked(wickedArgs, jsdocArgs, function (err) {
