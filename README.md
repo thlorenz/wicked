@@ -67,33 +67,136 @@ EXAMPLES:
 
 ## API
 
-#### wicked(args, jsdocargs, cb)
+<!-- START docme generated API please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN docme TO UPDATE -->
 
-```js
-/**
- * Generates jsdoc wiki pages for project of current working directory and updates github wiki with them.
- *
- * ##### Note
- *
- * It is assumed that this is run from the root of the project whose wiki should be generated.
- * Additionally the currently checked out branch will be used when generating blob urls to link source examples.
- *
- * However the github remote and branch can also be set via environment vars as explained in the
- * [documentation of jsdoc-githubify]{@link https://github.com/thlorenz/jsdoc-githubify#note) which is used
- * by wicked under the hood.
- *
- * @name wicked
- * @memberof Public
- * @function
- * @param {Array.<String>} args consumed by wicked
- * @param {Boolean=} args.noclean (false) if true, the temp directory into which wiki is checked out will **not be removed** when done
- * @param {Boolean=} args.nocommit(false)  if true, the updated wiki will **not be committed automatically**
- * @param {String=} args.loglevel (info) level at which to log: silly|verbose|info|warn|error|silent
- * @param {Array.<String>} jsdocargs consumed by jsdoc
- * @param {Function(Error)} cb called back when wicked finished generating the wiki page
- */
-```
+<div class="jsdoc-githubify">
+<section>
+<article>
+<div class="container-overview">
+<div class="description"><p>Public wicked API</p></div>
+<dl class="details">
+<dt class="tag-source">Source:</dt>
+<dd class="tag-source"><ul class="dummy">
+<li>
+<a href="https://github.com/thlorenz/wicked/blob/master/index.js">index.js</a>
+<span>, </span>
+<a href="https://github.com/thlorenz/wicked/blob/master/index.js#L23">lineno 23</a>
+</li>
+</ul></dd>
+</dl>
+</div>
+<dl>
+<dt>
+<h4 class="name" id="wicked"><span class="type-signature">&lt;static> </span>wicked<span class="signature">(args, jsdocargs, cb)</span><span class="type-signature"></span></h4>
+</dt>
+<dd>
+<div class="description">
+<p>Generates jsdoc wiki pages for project of current working directory and updates github wiki with them.</p>
+<h5>Note</h5>
+<p>It is assumed that this is run from the root of the project whose wiki should be generated.
+Additionally the currently checked out branch will be used when generating blob urls to link source examples.</p>
+<p>However the github remote and branch can also be set via environment vars as explained in the
+<a href="https://github.com/thlorenz/jsdoc-githubify#note">documentation of jsdoc-githubify</a> which is used
+by wicked under the hood.</p>
+</div>
+<h5>Parameters:</h5>
+<table class="params">
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th class="last">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="name"><code>args</code></td>
+<td class="type">
+<span class="param-type">Object</span>
+</td>
+<td class="description last"><p>consumed by wicked</p>
+<h6>Properties</h6>
+<table class="params">
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Argument</th>
+<th class="last">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="name"><code>noclean</code></td>
+<td class="type">
+<span class="param-type">Boolean</span>
+</td>
+<td class="attributes">
+&lt;optional><br>
+</td>
+<td class="description last"><p>(false) if true, the temp directory into which wiki is checked out will <strong>not be removed</strong> when done</p></td>
+</tr>
+<tr>
+<td class="name"><code>nocommit(false)</code></td>
+<td class="type">
+<span class="param-type">Boolean</span>
+</td>
+<td class="attributes">
+&lt;optional><br>
+</td>
+<td class="description last"><p>if true, the updated wiki will <strong>not be committed automatically</strong></p></td>
+</tr>
+<tr>
+<td class="name"><code>loglevel</code></td>
+<td class="type">
+<span class="param-type">String</span>
+</td>
+<td class="attributes">
+&lt;optional><br>
+</td>
+<td class="description last"><p>(info) level at which to log: silly|verbose|info|warn|error|silent</p></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td class="name"><code>jsdocargs</code></td>
+<td class="type">
+<span class="param-type">Array.&lt;String></span>
+</td>
+<td class="description last"><p>consumed by jsdoc</p></td>
+</tr>
+<tr>
+<td class="name"><code>cb</code></td>
+<td class="type">
+<span class="param-type">function</span>
+</td>
+<td class="description last"><p>called back when wicked finished generating the wiki page</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="details">
+<dt class="tag-source">Source:</dt>
+<dd class="tag-source"><ul class="dummy">
+<li>
+<a href="https://github.com/thlorenz/wicked/blob/master/index.js">index.js</a>
+<span>, </span>
+<a href="https://github.com/thlorenz/wicked/blob/master/index.js#L27">lineno 27</a>
+</li>
+</ul></dd>
+</dl>
+</dd>
+</dl>
+</article>
+</section>
+</div>
+
+*generated with [docme](https://github.com/thlorenz/docme)*
+<!-- END docme generated API please keep comment here to allow auto update -->
 
 ## License
 
 MIT
+

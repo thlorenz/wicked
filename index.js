@@ -9,10 +9,6 @@ var log        =  require('npmlog')
   , sidebar    =  require('./lib/sidebar')
   , commitWiki =  require('./lib/commit-wiki')
 
-/** @namespace Public
- *  @desc Public wicked API
- */
-
 function clean(tmpdir, cb) {
   log.info('wicked', 'Cleaning up ...');
   log.verbose('wicked', 'Removing tmp dir', tmpdir);
@@ -23,6 +19,10 @@ function tellmeWhere(repodir, cb) {
   log.info('wicked', 'Wiki cloned to and upated at', repodir);
   cb();
 }
+
+/** @namespace Public
+ *  @desc Public wicked API
+ */
 
 /**
  * Generates jsdoc wiki pages for project of current working directory and updates github wiki with them.
@@ -39,7 +39,7 @@ function tellmeWhere(repodir, cb) {
  * @name wicked
  * @memberof Public
  * @function
- * @param {Array.<String>} args consumed by wicked
+ * @param {Object} args consumed by wicked
  * @param {Boolean=} args.noclean (false) if true, the temp directory into which wiki is checked out will **not be removed** when done
  * @param {Boolean=} args.nocommit(false)  if true, the updated wiki will **not be committed automatically**
  * @param {String=} args.loglevel (info) level at which to log: silly|verbose|info|warn|error|silent
@@ -78,4 +78,5 @@ var go = module.exports = function wicked(args, jsdocargs, cb) {
 
 /** @namespace Internal
  *  @desc Internal wicked functions
+ *  @private
  */
