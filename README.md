@@ -65,6 +65,20 @@ EXAMPLES:
     wicked  --loglevel silly --noclean -- --configure ./myconf.json
 ```
 
+## Helpful links and techniques
+
+Since wicked is using [jsdoc](http://usejsdoc.org/) under the hood, it is helpful to review its documentation. I
+**highly recommend** [this page](https://developers.google.com/closure/compiler/docs/js-for-compiler#types) explaining
+how to specify `@param` types among other useful specs.
+
+In order to avoid all functions being attached to the `global` namespace resulting in one API page per function, I namespaced functions in wicked with
+`@namespace` and `@memberof` working together. As an example the `Internal` namespace is [defined
+here](https://github.com/thlorenz/wicked/blob/59a28777ec777512e7ddab7b75098d8b1b0acd06/index.js#L79-L81) and used by all
+the lib functions [like this
+one](https://github.com/thlorenz/wicked/blob/59a28777ec777512e7ddab7b75098d8b1b0acd06/lib/wikify.js#L110).
+
+Feel free to study the commenting style used in wicked itself and compare with the wiki pages it produced.
+
 ## API
 
 <!-- START docme generated API please keep comment here to allow auto update -->
