@@ -79,11 +79,15 @@ one](https://github.com/thlorenz/wicked/blob/59a28777ec777512e7ddab7b75098d8b1b0
 
 Feel free to study the commenting style used in wicked itself and compare with the wiki pages it produced.
 
+
+In order to make your wicked API pages appear properly styled, please [install the chrome extension or bookmarklet](http://thlorenz.github.io/jsdoc-githubify-inject/).
+
 ## API
 
 <!-- START docme generated API please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN docme TO UPDATE -->
 
+<div>
 <div class="jsdoc-githubify">
 <section>
 <article>
@@ -208,6 +212,7 @@ by wicked under the hood.</p>
 </div>
 
 *generated with [docme](https://github.com/thlorenz/docme)*
+</div>
 <!-- END docme generated API please keep comment here to allow auto update -->
 
 ## License
