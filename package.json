@@ -38,7 +38,7 @@
     "nave": "~0.4.3",
     "tap": "~0.4.3"
   },
-  "keywords": [],
+  "keywords": ["jsdoc", "documentation", "generate", "wiki", "github", "comments"],
   "author": {
     "name": "Thorsten Lorenz",
     "email": "thlorenz@gmx.de",
