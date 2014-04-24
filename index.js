@@ -1,13 +1,15 @@
 'use strict';
 
-var log        =  require('npmlog')
-  , rmrf       =  require('rimraf')
-  , runnel     =  require('runnel')
-  , cloneWiki  =  require('./lib/clone-wiki')
-  , runJsdoc   =  require('./lib/run-jsdoc')
-  , wikify     =  require('./lib/wikify')
-  , sidebar    =  require('./lib/sidebar')
-  , commitWiki =  require('./lib/commit-wiki')
+var log        = require('npmlog')
+  , rmrf       = require('rimraf')
+  , runnel     = require('runnel')
+  , cloneWiki  = require('./lib/clone-wiki')
+  , runJsdoc   = require('./lib/run-jsdoc')
+  , wikify     = require('./lib/wikify')
+  , sidebar    = require('./lib/sidebar')
+  , commitWiki = require('./lib/commit-wiki')
+  , runDoctoc  = require('./lib/run-doctoc')
+
 
 function clean(tmpdir, cb) {
   log.info('wicked', 'Cleaning up ...');
@@ -62,6 +64,8 @@ var go = module.exports = function wicked(args, jsdocargs, cb) {
       , wikify.bind(null, info.repo.dir)
       , sidebar.bind(null, info.repo.dir)
     ];
+
+    if (args.toc) tasks.push(runDoctoc);
 
     tasks.push(args.nocommit ? tellmeWhere.bind(null, info.repo.dir) : commitWiki.bind(null, info.repo));
     if (!args.noclean && !args.nocommit) tasks.push(clean.bind(null, info.root));
