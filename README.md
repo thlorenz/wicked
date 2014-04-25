@@ -105,7 +105,7 @@ In order to make your wicked API pages appear properly styled, please [install t
 <li>
 <a href="https://github.com/thlorenz/wicked/blob/master/index.js">index.js</a>
 <span>, </span>
-<a href="https://github.com/thlorenz/wicked/blob/master/index.js#L23">lineno 23</a>
+<a href="https://github.com/thlorenz/wicked/blob/master/index.js#L25">lineno 25</a>
 </li>
 </ul></dd>
 </dl>
@@ -162,14 +162,24 @@ by wicked under the hood.</p>
 <td class="description last"><p>(false) if true, the temp directory into which wiki is checked out will <strong>not be removed</strong> when done</p></td>
 </tr>
 <tr>
-<td class="name"><code>nocommit(false)</code></td>
+<td class="name"><code>nocommit</code></td>
 <td class="type">
 <span class="param-type">Boolean</span>
 </td>
 <td class="attributes">
 &lt;optional><br>
 </td>
-<td class="description last"><p>if true, the updated wiki will <strong>not be committed automatically</strong></p></td>
+<td class="description last"><p>(false)  if true, the updated wiki will <strong>not be committed automatically</strong></p></td>
+</tr>
+<tr>
+<td class="name"><code>toc</code></td>
+<td class="type">
+<span class="param-type">Boolean</span>
+</td>
+<td class="attributes">
+&lt;optional><br>
+</td>
+<td class="description last"><p>(false)  if true, a table of contents is added to each generated wiki</p></td>
 </tr>
 <tr>
 <td class="name"><code>loglevel</code></td>
@@ -207,7 +217,7 @@ by wicked under the hood.</p>
 <li>
 <a href="https://github.com/thlorenz/wicked/blob/master/index.js">index.js</a>
 <span>, </span>
-<a href="https://github.com/thlorenz/wicked/blob/master/index.js#L27">lineno 27</a>
+<a href="https://github.com/thlorenz/wicked/blob/master/index.js#L29">lineno 29</a>
 </li>
 </ul></dd>
 </dl>

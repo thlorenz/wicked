@@ -43,7 +43,8 @@ function tellmeWhere(repodir, cb) {
  * @function
  * @param {Object} args consumed by wicked
  * @param {Boolean=} args.noclean (false) if true, the temp directory into which wiki is checked out will **not be removed** when done
- * @param {Boolean=} args.nocommit(false)  if true, the updated wiki will **not be committed automatically**
+ * @param {Boolean=} args.nocommit (false)  if true, the updated wiki will **not be committed automatically**
+ * @param {Boolean=} args.toc (false)  if true, a table of contents is added to each generated wiki
  * @param {String=} args.loglevel (info) level at which to log: silly|verbose|info|warn|error|silent
  * @param {Array.<String>} jsdocargs consumed by jsdoc
  * @param {Function(Error)} cb called back when wicked finished generating the wiki page
