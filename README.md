@@ -45,6 +45,8 @@ OPTIONS:
 
   --nocommit      don't commit the updated wiki automatically nor remove the temp directory
 
+  -t, --toc       causes wicked to generate a table of contents on top of each wiki page
+
   -l, --loglevel  level at which to log: silly|verbose|info|warn|error|silent -- default: info
   
   -h, --help      Print this help message.
@@ -55,6 +57,10 @@ EXAMPLES:
   Generate with default options:
     
     wicked
+
+  Generate and include table of contents:
+    
+    wicked --toc
 
   Override [jsdocconf.json](http://usejsdoc.org/about-configuring-jsdoc.html):
 

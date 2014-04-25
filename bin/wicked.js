@@ -11,7 +11,7 @@ var log      =  require('npmlog')
 (function damnYouEsprima() {
 
 var argv = minimist(process.argv.slice(2)
-  , { boolean: [ 'noclean', 'nocommit', 'h', 'help' ]
+  , { boolean: [ 'noclean', 'nocommit', 'toc', 't', 'h', 'help' ]
     , string: [ 'loglevel', 'l' ]
   });
 
@@ -22,6 +22,7 @@ if (argv.h || argv.help) {
   fs.createReadStream(usage).pipe(process.stdout);
   return;
 }
+argv.toc = argv.toc || argv.t;
 
 wicked(argv, argv._, function (err) {
   if (err) return log.error('wicked', err);

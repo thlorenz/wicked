@@ -65,7 +65,9 @@ var go = module.exports = function wicked(args, jsdocargs, cb) {
       , sidebar.bind(null, info.repo.dir)
     ];
 
-    if (args.toc) tasks.push(runDoctoc);
+    if (args.toc) tasks.push(function (cb_) {
+      runDoctoc(info.repo.dir, cb_);
+    })
 
     tasks.push(args.nocommit ? tellmeWhere.bind(null, info.repo.dir) : commitWiki.bind(null, info.repo));
     if (!args.noclean && !args.nocommit) tasks.push(clean.bind(null, info.root));
